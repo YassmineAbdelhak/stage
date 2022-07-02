@@ -1,10 +1,11 @@
 import axios from "axios";
 
+
 export const getAllProducts = () => (dispatch) => {
   dispatch({ type: "GET_PRODUCTS_REQUEST" });
 
   axios
-    .get("/api/products/allproducts")
+    .get("/products/")
     .then((res) => {
       console.log(res);
 
@@ -20,7 +21,7 @@ export const getProductById = (productid) => (dispatch) => {
   dispatch({ type: "GET_PRODUCTBYID_REQUEST" });
 
   axios
-    .post("/api/products/getproductbyid", { productid })
+    .post("/products/", { productid })
     .then((res) => {
       console.log(res);
 
@@ -37,7 +38,7 @@ export const filtreProducts = (searchkey, category) => (dispatch) => {
 
   dispatch({ type: "GET_PRODUCTS_REQUEST" });
   axios
-    .get("/api/products/allproducts")
+    .get("//products/")
     .then((res) => {
       filtredproducts = res.data;
 
@@ -82,7 +83,7 @@ export const deleteProduct = (productid) => (dispatch) => {
   dispatch({ type: "DELETE_PRODUCT_REQUEST" });
 
   axios
-    .post("/api/products/deleteproduct", { productid })
+    .post("/products/", { productid })
     .then((res) => {
       dispatch({ type: "DELETE_PRODUCT_SUCCESS", payload: res.data });
       window.location.reload();
@@ -96,10 +97,11 @@ export const addProduct = (product) => (dispatch) => {
   dispatch({ type: "ADD_PRODUCT_REQUEST" });
 
   axios
-    .post("/api/products/addproduct", { product })
+    .post("/products/", { product })
     .then((res) => {
       console.log(res);
       dispatch({ type: "ADD_PRODUCT_SUCCESS" });
+      window.location.reload()
     })
     .catch((err) => {
       dispatch({ type: "ADD_PRODUCT_FAILED", payload: err });
@@ -110,7 +112,7 @@ export const updateProduct = (productid, updatedproduct) => (dispatch) => {
   dispatch({ type: "UPDATE_PRODUCT_REQUEST" });
 
   axios
-    .post("/api/products/updateproduct", { productid, updatedproduct })
+    .post("/products/", { productid, updatedproduct })
     .then((res) => {
       console.log(res);
       dispatch({ type: "UPDATE_PRODUCT_SUCCESS" });

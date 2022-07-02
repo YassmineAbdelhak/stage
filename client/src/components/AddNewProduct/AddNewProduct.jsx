@@ -34,6 +34,7 @@ function AddNewProduct() {
     };
 
     dispatch(addProduct(product));
+    
   };
 
   return (
@@ -70,7 +71,7 @@ function AddNewProduct() {
               className="form-control mb-2 mr-sm-2"
               placeholder="TND"
               required
-              value="TND"
+              value={unit}
               onChange={(e) => {
                 setunit(e.target.value);
               }}

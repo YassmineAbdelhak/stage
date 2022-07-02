@@ -4,7 +4,7 @@ import './Loader.css'
 function Loader() {
   return (
     <div>
-       {/* <div class="all">
+       <div class="all">
         <div class="containerLoading">
           <div class="top"></div>
           <div class="inner-oval">
@@ -16,7 +16,7 @@ function Loader() {
             <h3>Loading...</h3>
           </center>
         </div>
-      </div> */}
+      </div> 
 
       
     <div className="mt-5">

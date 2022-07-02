@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import { ToastProvider } from "react-toast-notifications";
 
@@ -6,7 +7,6 @@ import RegisterForm from "./components/RegisterForm/RegisterForm";
 import LoginForm from "./components/LoginForm/LoginForm";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
-import Category from "./components/Catt/Category";
 import Cart from "./components/Cart/Cart";
 import Orders from "./components/Orders/Orders";
 import Footer from "./components/Footer/Footer";
@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 import Contact from "./components/Contact/Contact";
 
 function App() {
-  const user = JSON.parse(localStorage.getItem("currentUser"));
+  //const user = JSON.parse(localStorage.getItem("currentUser"));
   return (
     <ToastProvider
       placement="top-center"
@@ -33,15 +33,17 @@ function App() {
       <div className="App">
         {/* <Category/> */}
 
-        {/* <Annoucement/>
-        <Navbar/> */}
+        <Annoucement/>
+        <Navbar/> 
 
         <BrowserRouter>
-          <Route path="/" component={Home} exact />
-          <Route path="/product/:id" component={ProductsDescription} />
-          <Route path="/cart" component={Cart} />
+        <Route path="/" component={Home} exact />
           <Route path="/register" component={RegisterForm} />
           <Route path="/login" component={LoginForm} />
+          
+          {/*<Route path="/product/:id" component={ProductsDescription} />
+          <Route path="/cart" component={Cart} />
+          
           <Route path="/orders" component={Orders} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
@@ -60,7 +62,7 @@ function App() {
                 </div>
               ) : null
             ) : null}
-          </Route>
+              </Route>*/}
           {/* <Route path="/test" component={Category} /> */}
         </BrowserRouter>
       </div>

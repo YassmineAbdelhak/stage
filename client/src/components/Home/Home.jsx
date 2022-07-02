@@ -16,6 +16,7 @@ import Footer from "../Footer/Footer";
 
 
 function Home() {
+  
   const getallproductsstate = useSelector(
     (state) => state.getAllProductsReducer
   );
@@ -47,8 +48,6 @@ function Home() {
                 alignItems: "center",
                 justifyContent: "center",
                 flexWrap: "wrap",
-                
-
               }}
             >
               {products.map((product) => {
@@ -62,7 +61,7 @@ function Home() {
           </div>
         )}
       </div>
-      <Newsletter />
+      {/*<Newsletter />*/}
       <footer>
           <Footer />
         </footer>

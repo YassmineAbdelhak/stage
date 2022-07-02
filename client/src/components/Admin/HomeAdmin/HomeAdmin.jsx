@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import styled from "styled-components";
 import HomeItem from "./HomeItem";
 const Container = styled.div`

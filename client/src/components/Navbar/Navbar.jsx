@@ -8,7 +8,7 @@ import "./Navbar.css";
 import { useHistory } from "react-router-dom";
 
 function Navbar() {
-  const history = useHistory();
+  {/*const history = useHistory();
   const cartreducer = useSelector((state) => state.cartReducer);
   const { cartItems } = cartreducer;
   const [searchkey, setsearchkey] = useState("");
@@ -25,6 +25,7 @@ function Navbar() {
   ]);
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  //console.log(currentUser.user.username)
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -33,7 +34,7 @@ function Navbar() {
 
   const filterByCategoryName = (e) => {
     dispatch(filtreProducts(searchkey, e.target.innerHTML));
-  };
+  };*/}
 
   return (
     <div>
@@ -87,27 +88,25 @@ function Navbar() {
                 aria-labelledby="navbarDropdown"
                 style={{ cursor: "pointer" }}
               >
-                {categoryList.map((category) => {
-                  return (
+               
                     <a
-                      onClick={() => history.push(`/product-list/${category}`)}
                     >
-                      <a class="dropdown-item" onClick={filterByCategoryName}>
-                        {category}
+                      <a class="dropdown-item" >
+                        {/*category*/}
                       </a>
                     </a>
-                  );
-                })}
+                
+              
               </div>
             </li>
             <li class="nav-item">
               <a className="nav-link" href="/cart">
-                Cart : {cartItems.length}{" "}
+                {/*Cart : {cartItems.length}{" "}*/}
                 <i class="fas fa-shopping-cart" style={{ color: "black" }}></i>
               </a>{" "}
             </li>
 
-            {currentUser ? (
+            
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -117,7 +116,7 @@ function Navbar() {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  {currentUser.username.toUpperCase()}
+                  {/*currentUser.username.toUpperCase()*/}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a className="dropdown-item" href="/orders">
@@ -126,29 +125,23 @@ function Navbar() {
                   <div class="dropdown-divider"></div>
                   <li
                     className="dropdown-item"
-                    onClick={() => {
-                      dispatch(logoutUser());
-                    }}
+                    
                   >
                     Logout
                   </li>
                 </div>
               </li>
-            ) : (
+            
               <li class="nav-item">
                 <a class="nav-link" href="/login">
                   Login
                 </a>
               </li>
-            )}
+          
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input
               class="form-control mr-sm-2"
-              value={searchkey}
-              onChange={(e) => {
-                setsearchkey(e.target.value);
-              }}
               type="text"
               placeholder="Search"
             />

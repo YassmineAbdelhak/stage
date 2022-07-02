@@ -4,7 +4,7 @@ export const registerNewUser = (user) => (dispatch) => {
   dispatch({ type: "USER_REGISTER_REQUEST" });
 
   axios
-    .post("/api/users/register", user)
+    .post("/register", user)
     .then((res) => {
       dispatch({ type: "USER_REGISTER_SUCCESS" });
       window.location.href = "/login";
@@ -19,12 +19,12 @@ export const loginUser = (user) => (dispatch) => {
   dispatch({ type: "USER_LOGIN_REQUEST" });
 
   axios
-    .post("/api/users/login", user)
+    .post("/login", user)
     .then((res) => {
       dispatch({ type: "USER_LOGIN_SUCCESS" });
 
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-
+      localStorage.setItem("token",res.data.token)
       window.location.href = "/";
 
       if (user.email == "admin@gmail.com") {
@@ -50,7 +50,7 @@ export const getAllUsers = () => (dispatch) => {
   dispatch({ type: "GET_ALLUSERS_REQUEST" });
 
   axios
-    .get("/api/users/getallusers")
+    .get("/")
     .then((res) => {
       dispatch({ type: "GET_ALLUSERS_SUCCESS", payload: res.data });
     })
@@ -63,7 +63,7 @@ export const deleteUser = (userid) => (dispatch) => {
   dispatch({ type: "DELETE_USER_REQUEST" });
 
   axios
-    .post("/api/users/deleteuser", { userid })
+    .post("/", { userid })
     .then((res) => {
       dispatch({ type: "DELETE_USER_SUCCESS", payload: res.data });
       window.location.reload();

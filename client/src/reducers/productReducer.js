@@ -1,3 +1,17 @@
+const initialState = {
+    products: [],
+    product: {},
+    msg: ""
+};
+
+const productReducer = (state = initialState, action) => {
+    switch (action.type) {
+        default:
+        return state;
+    };
+}
+
+export default productReducer;
 export const getAllProductsReducer = (state = { products: [] }, action) => {
 
     switch (action.type) {
@@ -40,7 +54,7 @@ export const getProductByIdReducer=(state ={product : []} , action)=>{
 
 }
 
-export const addProductReviewReducer=(state ={} , action)=>{
+{/*export const addProductReviewReducer=(state ={} , action)=>{
 
     switch (action.type) {
         case 'ADD_PRODUCT_REVIEW_REQUEST': return {
@@ -59,7 +73,7 @@ export const addProductReviewReducer=(state ={} , action)=>{
         default: return state
     }
 
-}
+}*/}
 
 export const deleteProductReducer = (state = {product:[]}, action) => {
 
@@ -132,4 +146,4 @@ export const deleteProductReducer = (state = {product:[]}, action) => {
                
                 default: return state;
             }};
-    
+        

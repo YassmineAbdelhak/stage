@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 

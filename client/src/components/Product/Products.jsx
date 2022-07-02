@@ -7,20 +7,20 @@ function Products({ product }) {
     <div>
       <div>
         <Link to={`product/${product._id}`}>
-          <img
+         <img
             style={{ height: "250px" }}
             src={product.imgurl}
             className="img-fluid"
-          />
+         />
           <h1>{product.name}</h1>
-          <ReactStars
+         {/*} <ReactStars
             count={product.rating}
             size={28}
             color="#ffd700"
             char={"☆"}
             isHalf={true}
             readonly
-          />
+          />*/}
           <h1>
             Price: {product.price} {product.unit}
           </h1>
