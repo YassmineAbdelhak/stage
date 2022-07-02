@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 import Contact from "./components/Contact/Contact";
 
 function App() {
-  //const user = JSON.parse(localStorage.getItem("currentUser"));
+  const user = JSON.parse(localStorage.getItem("currentUser"));
   return (
     <ToastProvider
       placement="top-center"
@@ -51,7 +51,7 @@ function App() {
             exact
             path="/product-list/:category"
             render={() => <ProductCategoryList />}
-          />
+  />*/}
           <Route>
             {user ? (
               user.isAdmin ? (
@@ -62,7 +62,7 @@ function App() {
                 </div>
               ) : null
             ) : null}
-              </Route>*/}
+              </Route>
           {/* <Route path="/test" component={Category} /> */}
         </BrowserRouter>
       </div>

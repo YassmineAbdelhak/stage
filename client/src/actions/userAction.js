@@ -4,7 +4,7 @@ export const registerNewUser = (user) => (dispatch) => {
   dispatch({ type: "USER_REGISTER_REQUEST" });
 
   axios
-    .post("/register", user)
+    .post("/users/register", user)
     .then((res) => {
       dispatch({ type: "USER_REGISTER_SUCCESS" });
       window.location.href = "/login";
@@ -19,7 +19,7 @@ export const loginUser = (user) => (dispatch) => {
   dispatch({ type: "USER_LOGIN_REQUEST" });
 
   axios
-    .post("/login", user)
+    .post("/users/login", user)
     .then((res) => {
       dispatch({ type: "USER_LOGIN_SUCCESS" });
 

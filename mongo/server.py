@@ -1,11 +1,12 @@
-from flask import Flask
-from requests import session
+from flask import Flask, session
 from routes.products import products
 from routes.users import users
+from routes.categories import categories
 
 app=Flask (__name__)
 app.register_blueprint(products, url_prefix='/products')
 app.register_blueprint(users, url_prefix='/users')
+app.register_blueprint(categories, url_prefix='/categories')
 #######################################
 
 if __name__ == "__main__" :

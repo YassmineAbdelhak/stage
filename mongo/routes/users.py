@@ -2,9 +2,9 @@ from flask import Blueprint, session, Response, request
 import pymongo
 import json
 from bson.objectid import ObjectId
-import bcrypt
+from flask import Flask
+from flask_bcrypt import Bcrypt
 
-#products = Blueprint("products", __name__)
 users= Blueprint("users",__name__)
 
 try :
@@ -35,6 +35,7 @@ def register() :
             'firstName': request.form['firstName'],
             'lastName': request.form['lastName'],
             'email': request.form['email'], 
+            'isAdmin': request.form['isAdmin'],
             'password': hashed
         }
         dbResponse = db.users.insert_one(user)
